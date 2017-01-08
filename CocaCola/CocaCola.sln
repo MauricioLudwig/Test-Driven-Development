@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocaCola", "CocaCola\CocaCola.csproj", "{1D95D534-1B45-4E1A-B2D5-5592CD18C9D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocaCola.Library", "CocaCola.Library\CocaCola.Library.csproj", "{6B2D9738-176B-4BC3-9324-EC090D2F677E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocaCola.Library.Tests", "CocaCola.Library.Tests\CocaCola.Library.Tests.csproj", "{D55C964E-BC98-4BF7-A387-D6380CF46218}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D95D534-1B45-4E1A-B2D5-5592CD18C9D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D95D534-1B45-4E1A-B2D5-5592CD18C9D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D95D534-1B45-4E1A-B2D5-5592CD18C9D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D95D534-1B45-4E1A-B2D5-5592CD18C9D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B2D9738-176B-4BC3-9324-EC090D2F677E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B2D9738-176B-4BC3-9324-EC090D2F677E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B2D9738-176B-4BC3-9324-EC090D2F677E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B2D9738-176B-4BC3-9324-EC090D2F677E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D55C964E-BC98-4BF7-A387-D6380CF46218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D55C964E-BC98-4BF7-A387-D6380CF46218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D55C964E-BC98-4BF7-A387-D6380CF46218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D55C964E-BC98-4BF7-A387-D6380CF46218}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
