@@ -35,9 +35,7 @@ namespace NumberSystemConverter
                 Console.WriteLine("C  - 100");
                 Console.WriteLine("L  - 50");
                 Console.WriteLine("X  - 10");
-                Console.WriteLine("IX - 9");
                 Console.WriteLine("V  - 5");
-                Console.WriteLine("IV - 4");
                 Console.WriteLine("I  - 1\n");
                 Console.WriteLine("Please enter an integer value OR roman numeral to be converted...");
                 #endregion
@@ -55,7 +53,7 @@ namespace NumberSystemConverter
                     if (validInput)
                     {
                         // if string is a valid integer input
-                        result = converter.ConvertToRomanNumeral(integerInput);
+                        result = String.Format("{0} = {1}", stringInput, converter.ConvertToRomanNumeral(integerInput));
                     } 
                     else
                     {
@@ -63,14 +61,14 @@ namespace NumberSystemConverter
                         // if string is defined in the Roman Numeral enum list
                         if (stringInput.All(c => Enum.IsDefined(typeof(RomanNumeralsType), c.ToString())))
                         {
-                            result = converter.ConvertToInteger(stringInput).ToString();
+                            result = String.Format("{0} = {1}", stringInput, converter.ConvertToInteger(stringInput).ToString());
                         }
                         // if string is not defined in the Roman Numeral enum list
                         else
-                            result = String.Format("Invalid input, try again...");
+                            result = String.Format("{0} is an invalid input, try again...", stringInput);
                     }
 
-                    Console.WriteLine("{0} = {1}", stringInput, result);
+                    Console.WriteLine(result);
                 }
                 else
                     Console.WriteLine("No empty strings are allowed.");

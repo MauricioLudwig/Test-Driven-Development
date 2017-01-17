@@ -116,12 +116,9 @@ namespace NumberSystemConverter
             int previousDigit = 0;
 
             foreach (var character in word)
-            {
                 digits.Add((int)Enum.Parse(typeof(RomanNumeralsType), character.ToString()));
-            }
 
             digits.Reverse();
-
             sum += digits[0];
 
             foreach (var digit in digits.Skip(1))
