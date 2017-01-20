@@ -91,11 +91,24 @@ namespace PlayingCardsTDD
 
         public void InputCommand()
         {
-            Console.Write("Input command: ");
-            string input = Console.ReadLine();
-            string output = InputOperation(input);
-            Console.WriteLine(output);
-            Console.ReadKey();
+            bool loop = true;
+
+            while (loop)
+            {
+                Console.Write("Input command (empty to return): ");
+                string input = Console.ReadLine();
+                if (String.IsNullOrEmpty(input))
+                    loop = false;
+                else
+                {
+                    string output = InputOperation(input);
+                    Console.WriteLine(output);
+                    Console.ReadKey();
+                }
+                Console.Clear();
+                UI.MainMenu();
+                UI.LineBreak();
+            }
         }
 
         public string InputOperation(string input)
