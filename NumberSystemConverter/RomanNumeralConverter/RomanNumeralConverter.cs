@@ -16,9 +16,13 @@ namespace NumberSystemConverter
     public enum RomanNumeralsType
     {
         M = 1000,
+        CM = 900,
         D = 500,
+        CD = 400,
         C = 100,
+        XC = 90,
         L = 50,
+        XL = 40,
         X = 10,
         IX = 9,
         V = 5,
@@ -39,22 +43,46 @@ namespace NumberSystemConverter
                 new RomanNumeralPair() {
                     // 1000
                     NumericValue = (int)RomanNumeralsType.M,
-                    RomanNumeralRepresentation = RomanNumeralsType.M.ToString()
+                    RomanNumeralRepresentation = RomanNumeralsType.M.ToString(),
+                },
+                new RomanNumeralPair()
+                {
+                    // 900
+                    NumericValue = (int)RomanNumeralsType.CM,
+                    RomanNumeralRepresentation = RomanNumeralsType.CM.ToString(),
                 },
                 new RomanNumeralPair() {
                     // 500
                     NumericValue = (int)RomanNumeralsType.D,
                     RomanNumeralRepresentation = RomanNumeralsType.D.ToString()
                 },
+                new RomanNumeralPair()
+                {
+                    // 400
+                    NumericValue = (int)RomanNumeralsType.CD,
+                    RomanNumeralRepresentation = RomanNumeralsType.CD.ToString(),
+                },
                 new RomanNumeralPair() {
                     // 100
                     NumericValue = (int)RomanNumeralsType.C,
-                    RomanNumeralRepresentation = RomanNumeralsType.C.ToString()
+                    RomanNumeralRepresentation = RomanNumeralsType.C.ToString(),
+                },
+                new RomanNumeralPair()
+                {
+                    // 90
+                    NumericValue = (int)RomanNumeralsType.XC,
+                    RomanNumeralRepresentation = RomanNumeralsType.XC.ToString(),
                 },
                 new RomanNumeralPair() {
                     // 50
                     NumericValue = (int)RomanNumeralsType.L,
                     RomanNumeralRepresentation = RomanNumeralsType.L.ToString()
+                },
+                new RomanNumeralPair()
+                {
+                    // 40
+                    NumericValue = (int)RomanNumeralsType.XL,
+                    RomanNumeralRepresentation = RomanNumeralsType.XL.ToString(),
                 },
                 new RomanNumeralPair() {
                     // 10
