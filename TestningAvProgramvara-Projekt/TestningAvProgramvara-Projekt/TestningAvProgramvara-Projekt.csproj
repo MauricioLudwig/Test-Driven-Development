@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9662D65C-4644-43F8-B557-4AEA170AFA82}</ProjectGuid>
+    <ProjectGuid>{689B8C82-1B8A-4C44-BFF7-6C3120BA5556}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NumberSystemConverter</RootNamespace>
-    <AssemblyName>NumberSystemConverter</AssemblyName>
+    <RootNamespace>TestningAvProgramvara_Projekt</RootNamespace>
+    <AssemblyName>TestningAvProgramvara-Projekt</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,18 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserDefinedException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RomanNumeralConverter\RomanNumeralConverter.csproj">
-      <Project>{59f3a9a4-df5d-4dac-9af7-f847821e0338}</Project>
-      <Name>RomanNumeralConverter</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

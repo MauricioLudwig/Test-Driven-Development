@@ -120,7 +120,7 @@ namespace NumberSystemConverter
             StringBuilder builder = new StringBuilder();
 
             if (number == 0)
-                return "nulla";
+                return "nulla is the latin word for null/zero";
             else
             {
                 // Iterate through the list, starting with the highest value

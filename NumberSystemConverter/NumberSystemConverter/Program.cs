@@ -44,39 +44,94 @@ namespace NumberSystemConverter
                 Console.Write("\nInput: ");
                 Console.ResetColor();
 
-                stringInput = Console.ReadLine().ToUpper();
+                try
+                {
+                    stringInput = Console.ReadLine().ToUpper();
+                }
+                catch (Exception e)
+                {
+                    if (e is OutOfMemoryException || e is ArgumentOutOfRangeException || e is System.IO.IOException)
+                        throw new UserDefinedException("Error encountered: " + e.Message);
+                    stringInput = String.Empty;
+                }
+
                 validInput = int.TryParse(stringInput, out integerInput);
 
-                if (!(String.IsNullOrEmpty(stringInput)))
+                try
                 {
+                    if (String.IsNullOrEmpty(stringInput))
+                        throw new UserDefinedException();
+                }
+                catch (Exception e)
+                {
+                    if (e is UserDefinedException)
+                        Console.WriteLine("Error encountered: {0}. No empty strings allowed.",
+                            e.Message);
+                }
 
+                try
+                {
+                    ValidateSequence(stringInput);
+                }
+                catch (Exception e)
+                {
+                    stringInput = string.Empty;
+                    if (e is UserDefinedException)
+                        Console.WriteLine("Error encountered: {0} Roman Numeral sequence was incorrect", e.Message);
+                }
+               
+                if (!(String.IsNullOrEmpty(stringInput)))
+                {  
                     if (validInput)
                     {
-                        // if string is a valid integer input
                         result = String.Format("{0} = {1}", stringInput, converter.ConvertToRomanNumeral(integerInput));
-                    } 
+                    }
                     else
                     {
-                        // if string is not a valid integer input
-                        // if string is defined in the Roman Numeral enum list
-                        if (stringInput.All(c => Enum.IsDefined(typeof(RomanNumeralsType), c.ToString())))
+                        try
                         {
-                            result = String.Format("{0} = {1}", stringInput, converter.ConvertToInteger(stringInput).ToString());
+                            if (stringInput.All(c => Enum.IsDefined(typeof(RomanNumeralsType), c.ToString())))
+                            {
+                                result = String.Format("{0} = {1}", stringInput, converter.ConvertToInteger(stringInput).ToString());
+                            }
+                            else
+                                throw new UserDefinedException();
                         }
-                        // if string is not defined in the Roman Numeral enum list
-                        else
-                            result = String.Format("{0} is an invalid input, try again...", stringInput);
+                        catch (Exception e)
+                        {
+                            if (e is UserDefinedException)
+                                Console.WriteLine("Error encountered: " + e.Message + " Write either all numerals or digits.");
+                        }
                     }
-
-                    Console.WriteLine(result);
                 }
-                else
-                    Console.WriteLine("No empty strings are allowed.");
 
                 Console.Write("\nPress any key...");
                 Console.ReadKey();
                 Console.Clear();
             }
         }
+
+        public static void ValidateSequence(string input)
+        {
+
+            bool validSequence = true;
+
+            string[] myArray = new string[] { input };
+            string[] allowedRomanNumeralSequence = new string[]
+            {
+                "DM", "LM", "IM", "XM", "VM", "LD", "XD", "VD", "ID", "IIII", "LC", "VC",
+                "IC", "VL", "IL",
+            };
+
+            foreach (var seq in allowedRomanNumeralSequence)
+            {
+                if (myArray[0].Contains(seq))
+                    validSequence = false;
+            }
+
+            if (!validSequence)
+                throw new UserDefinedException();
+        }
+
     }
 }
